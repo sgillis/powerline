@@ -833,6 +833,12 @@ def virtualenv(pl, segment_info):
 	return os.path.basename(segment_info['environ'].get('VIRTUAL_ENV', '')) or None
 
 
+@requires_segment_info
+def hsenv(pl, segment_info):
+	'''Return the name of the current Haskell virtual environment'''
+	return os.path.basename(segment_info['environ'].get('HSENV', '')) or None
+
+
 _IMAPKey = namedtuple('Key', 'username password server port folder')
 
 
